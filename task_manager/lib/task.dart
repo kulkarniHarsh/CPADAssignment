@@ -11,7 +11,7 @@ class _TaskState extends State<MyTask> {
   final taskController = TextEditingController();
   final taskDescriptionController = TextEditingController();
 
-  void addToDo() async {
+  void addTask() async {
     if (taskController.text.trim().isEmpty ||
         taskDescriptionController.text.trim().isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -67,7 +67,7 @@ class _TaskState extends State<MyTask> {
                     primary: Colors.blueAccent,
                   ),
                   onPressed: () {
-                    addToDo();
+                    addTask();
                   },
                   child: Text("Create")),
             ],
