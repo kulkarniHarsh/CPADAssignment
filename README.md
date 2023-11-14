@@ -24,10 +24,12 @@ Run the command 'flutter run' <br />
 Then select the target device to run it on web, mobile, emulator, simulator, etc.
 
 ### Landing Screen
-Web <br />
+**Web** <br />
 ![img.png](img.png)
 
-Mobile <br />
+**Mobile** <br />
+![img_9.png](img_9.png)
+
 The application opens on the tab of DEFINED tasks. <br />
 The task name can be seen in bold and its corresponding description can be seen just below it.
 
@@ -36,8 +38,12 @@ There are 2 other states that a task can have, IN-PROGRESS and COMPLETED which a
 <br /> <strong> IN-PROGRESS Tab </strong> <br />
 ![img_1.png](img_1.png)
 
+![img_12.png](img_12.png)
+
 <br /> <strong> COMPLETED Tab </strong> <br />
 ![img_2.png](img_2.png)
+
+![img_13.png](img_13.png)
 <br />
 <br />
 
@@ -52,37 +58,52 @@ The tasks that were modified recently show up at the top of the screen.<br />
 ---------
 
 ### New Task Screen
-Web <br />
+**Web** <br />
 ![img_3.png](img_3.png)
+
+**Mobile** <br />
+![img_10.png](img_10.png)
+
 One can add a task name and a task description. <br />
 On clicking the 'CREATE' button, the data gets saved to the Back4App database. <br />
 
-Validation has been added, the task won't be created unless it has a name and a description <br />
+**_Validation_** has been added, the task won't be created unless it has a name and a description <br />
 The user is prompted with 'Some Data Missing' text in a snackbar at the bottom of the screen. <br />
 ![img_4.png](img_4.png)
+
+![img_14.png](img_14.png)
 
 Clicking the 'CREATE' button also takes the user back to the landing screen, where the user can then view the created task under the DEFINED tab. <br />
 
 ### Update Task Screen
-Web <br />
+**Web** <br />
 ![img_5.png](img_5.png)
+
+**Mobile** <br />
+![img_11.png](img_11.png)
+
 The user is presented with the task details alongwith the ID of the task he/she is editing. <br />
 The user may edit the task name, the task description as well as the state of the task to **ONE** of the **THREE** available states, _DEFINED_, _IN-PROGRESS_ or _COMPLETED_ <br />
 
 States:
 ![img_7.png](img_7.png)
 
-Similar validations are in place when editing the task.<br />
+![img_15.png](img_15.png)
+
+Similar **_validations_** are in place when editing the task.<br />
 ![img_6.png](img_6.png)
+
+![img_16.png](img_16.png)
 
 On clicking the 'UPDATE' button, the data is updated in the Back4App database. <br />
 Clicking the 'UPDATE' button also takes the user back to the landing screen, where the user can then view the updated task under the respective tab. <br />
 
 ### Delete Task
-![img_8.png](img_8.png)
 On clicking the trash can icon next to the task name, the task gets deleted.<br />
 The user is notified in a snackbar at the bottom of the screen with a message that contains the deleted task ID. <br />
-![img_9.png](img_9.png)
+![img_8.png](img_8.png)
+
+![img_17.png](img_17.png)
 
 ## References:
 A few resources to get you started if this is your first Flutter project:
