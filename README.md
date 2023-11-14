@@ -49,6 +49,7 @@ There are 2 other states that a task can have, IN-PROGRESS and COMPLETED which a
 
 ----------
 #### NOTE:
+
 The tasks in the DEFINED tab are sorted in the descending order of their creation. <br />
 The tasks that created recently show up at the top of the screen.
 <br />
