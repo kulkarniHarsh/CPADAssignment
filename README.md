@@ -1,6 +1,6 @@
 # task_manager
 
-Cross Platform Application Development (Merged - SEZG585/SSZG585)(S1-23)
+Cross Platform Application Development (Merged - SEZG585/SSZG585)(S1-23) <br />
 Assignment 1 <br />
 Flutter App with Back4App Integration
 
