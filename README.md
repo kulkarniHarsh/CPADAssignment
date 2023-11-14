@@ -17,7 +17,7 @@ Windows: https://docs.flutter.dev/get-started/install/windows <br />
 Mac: https://docs.flutter.dev/get-started/install/macos <br />
 Linux: https://docs.flutter.dev/get-started/install/linux <br />
 
-## Running Task Manager
+## Running the Task Manager application
 To run Task Manager, clone this repository.<br />
 Open Terminal/Command Prompt to the path of this repository. <br />
 Run the command 'flutter run' <br />
