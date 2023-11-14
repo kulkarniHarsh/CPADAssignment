@@ -19,56 +19,60 @@ class _TaskState extends State<MyTask> {
         duration: Duration(seconds: 2),
       ));
       return;
+    } else {
+      await saveTask(taskController.text, taskDescriptionController.text);
+      setState(() {
+        taskController.clear();
+        taskDescriptionController.clear();
+      });
+      Navigator.pop(context);
     }
-    await saveTask(taskController.text, taskDescriptionController.text);
-    setState(() {
-      taskController.clear();
-      taskDescriptionController.clear();
-    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: EdgeInsets.fromLTRB(17.0, 1.0, 7.0, 1.0),
-        margin: EdgeInsetsDirectional.all(1),
-        child: Column(
-          children: [
-            TextField(
-              autocorrect: true,
-              textCapitalization: TextCapitalization.sentences,
-              controller: taskController,
-              decoration: InputDecoration(
-                  labelText: "New Task Name",
-                  labelStyle: TextStyle(color: Colors.blueAccent)),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              autocorrect: true,
-              textCapitalization: TextCapitalization.sentences,
-              controller: taskDescriptionController,
-              maxLines: 7,
-              keyboardType: TextInputType.multiline,
-              decoration: InputDecoration(
-                  labelText: "New Task Description",
-                  labelStyle: TextStyle(color: Colors.blueAccent)),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  onPrimary: Colors.white,
-                  primary: Colors.blueAccent,
-                ),
-                onPressed: () {
-                  addToDo();
-                  Navigator.pop(context);
-                },
-                child: Text("Create")),
-          ],
+        appBar: AppBar(
+          title: Text("New Task"),
+          centerTitle: true,
         ),
-      )
-    );
+        body: Container(
+          padding: EdgeInsets.fromLTRB(17.0, 1.0, 7.0, 1.0),
+          margin: EdgeInsetsDirectional.all(1),
+          child: Column(
+            children: [
+              TextField(
+                autocorrect: true,
+                textCapitalization: TextCapitalization.sentences,
+                controller: taskController,
+                decoration: InputDecoration(
+                    labelText: "New Task Name",
+                    labelStyle: TextStyle(color: Colors.blueAccent)),
+              ),
+              SizedBox(height: 20),
+              TextField(
+                autocorrect: true,
+                textCapitalization: TextCapitalization.sentences,
+                controller: taskDescriptionController,
+                maxLines: 7,
+                keyboardType: TextInputType.multiline,
+                decoration: InputDecoration(
+                    labelText: "New Task Description",
+                    labelStyle: TextStyle(color: Colors.blueAccent)),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    onPrimary: Colors.white,
+                    primary: Colors.blueAccent,
+                  ),
+                  onPressed: () {
+                    addToDo();
+                  },
+                  child: Text("Create")),
+            ],
+          ),
+        ));
   }
 
   Future<void> saveTask(String title, String description) async {

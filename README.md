@@ -17,7 +17,7 @@ Windows: https://docs.flutter.dev/get-started/install/windows <br />
 Mac: https://docs.flutter.dev/get-started/install/macos <br />
 Linux: https://docs.flutter.dev/get-started/install/linux <br />
 
-### Running Task Manager
+## Running Task Manager
 To run Task Manager, clone this repository.<br />
 Open Terminal/Command Prompt to the path of this repository. <br />
 Run the command 'flutter run' <br />
@@ -28,18 +28,63 @@ Web <br />
 ![img.png](img.png)
 
 Mobile <br />
-The application opens on the tab of DEFINED tasks.
+The application opens on the tab of DEFINED tasks. <br />
 The task name can be seen in bold and its corresponding description can be seen just below it.
 
 There are 2 other states that a task can have, IN-PROGRESS and COMPLETED which are seen in the remaining 2 tabs.
+<br />
 <br /> <strong> IN-PROGRESS Tab </strong> <br />
 ![img_1.png](img_1.png)
 
 <br /> <strong> COMPLETED Tab </strong> <br />
 ![img_2.png](img_2.png)
+<br />
+<br />
 
+----------
+#### NOTE:
+The tasks in the DEFINED tab are sorted in the descending order of their creation. <br />
+The tasks that created recently show up at the top of the screen.
+<br />
+<br />
+The tasks in the IN-PROGRESS and COMPLETED tabs are sorted in the descending order of their modification.
+The tasks that were modified recently show up at the top of the screen.<br />
+---------
 
-### References:
+### New Task Screen
+Web <br />
+![img_3.png](img_3.png)
+One can add a task name and a task description. <br />
+On clicking the 'CREATE' button, the data gets saved to the Back4App database. <br />
+
+Validation has been added, the task won't be created unless it has a name and a description <br />
+The user is prompted with 'Some Data Missing' text in a snackbar at the bottom of the screen. <br />
+![img_4.png](img_4.png)
+
+Clicking the 'CREATE' button also takes the user back to the landing screen, where the user can then view the created task under the DEFINED tab. <br />
+
+### Update Task Screen
+Web <br />
+![img_5.png](img_5.png)
+The user is presented with the task details alongwith the ID of the task he/she is editing. <br />
+The user may edit the task name, the task description as well as the state of the task to **ONE** of the **THREE** available states, _DEFINED_, _IN-PROGRESS_ or _COMPLETED_ <br />
+
+States:
+![img_7.png](img_7.png)
+
+Similar validations are in place when editing the task.<br />
+![img_6.png](img_6.png)
+
+On clicking the 'UPDATE' button, the data is updated in the Back4App database. <br />
+Clicking the 'UPDATE' button also takes the user back to the landing screen, where the user can then view the updated task under the respective tab. <br />
+
+### Delete Task
+![img_8.png](img_8.png)
+On clicking the trash can icon next to the task name, the task gets deleted.<br />
+The user is notified in a snackbar at the bottom of the screen with a message that contains the deleted task ID. <br />
+![img_9.png](img_9.png)
+
+## References:
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)

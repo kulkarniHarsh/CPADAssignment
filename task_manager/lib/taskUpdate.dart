@@ -33,73 +33,79 @@ class _TaskState extends State<MyTaskUpdate> {
         duration: Duration(seconds: 2),
       ));
       return;
+    } else {
+      await updateTaskToBackEnd(
+          myTask.id, taskController.text, taskDescriptionController.text,
+          myTask.status);
+      setState(() {
+        taskController.clear();
+        taskDescriptionController.clear();
+      });
+      Navigator.pop(context);
     }
-    await updateTaskToBackEnd(myTask.id, taskController.text, taskDescriptionController.text, myTask.status);
-    setState(() {
-      taskController.clear();
-      taskDescriptionController.clear();
-    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: EdgeInsets.fromLTRB(17.0, 1.0, 7.0, 1.0),
-        margin: EdgeInsetsDirectional.all(1),
-        child: Column(
-          children: [
-            TextField(
-              autocorrect: true,
-              textCapitalization: TextCapitalization.sentences,
-              controller: taskController,
-              decoration: InputDecoration(
-                  labelText: "Task Name to Update",
-                  labelStyle: TextStyle(color: Colors.blueAccent)),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              autocorrect: true,
-              textCapitalization: TextCapitalization.sentences,
-              controller: taskDescriptionController,
-              maxLines: 7,
-              keyboardType: TextInputType.multiline,
-              decoration: InputDecoration(
-                  labelText: "Task Description to Update",
-                  labelStyle: TextStyle(color: Colors.blueAccent)),
-            ),
-            SizedBox(height: 20),
-            DropdownButton<String>(
-              value: myTask.status,
-              onChanged: (String? newValue) {
-                // myTask.status = newValue!;
-                setState(() {
-                  myTask.status = newValue!;
-                });
-              },
-              items: ['DEFINED', 'IN-PROGRESS', 'COMPLETED']
-                  .map((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  onPrimary: Colors.white,
-                  primary: Colors.blueAccent,
-                ),
-                onPressed: () {
-                  updateTask();
-                  Navigator.pop(context);
-                },
-                child: Text("Update")),
-          ],
+        appBar: AppBar(
+          title: Text("Update Task #" + myTask.id),
+          centerTitle: true,
         ),
-      )
-    );
+        body: Container(
+          padding: EdgeInsets.fromLTRB(17.0, 1.0, 7.0, 1.0),
+          margin: EdgeInsetsDirectional.all(1),
+          child: Column(
+            children: [
+              TextField(
+                autocorrect: true,
+                textCapitalization: TextCapitalization.sentences,
+                controller: taskController,
+                decoration: InputDecoration(
+                    labelText: "Task Name to Update",
+                    labelStyle: TextStyle(color: Colors.blueAccent)),
+              ),
+              SizedBox(height: 20),
+              TextField(
+                autocorrect: true,
+                textCapitalization: TextCapitalization.sentences,
+                controller: taskDescriptionController,
+                maxLines: 7,
+                keyboardType: TextInputType.multiline,
+                decoration: InputDecoration(
+                    labelText: "Task Description to Update",
+                    labelStyle: TextStyle(color: Colors.blueAccent)),
+              ),
+              SizedBox(height: 20),
+              DropdownButton<String>(
+                value: myTask.status,
+                onChanged: (String? newValue) {
+                  // myTask.status = newValue!;
+                  setState(() {
+                    myTask.status = newValue!;
+                  });
+                },
+                items:
+                    ['DEFINED', 'IN-PROGRESS', 'COMPLETED'].map((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    onPrimary: Colors.white,
+                    primary: Colors.blueAccent,
+                  ),
+                  onPressed: () {
+                    updateTask();
+                  },
+                  child: Text("Update")),
+            ],
+          ),
+        ));
   }
 
   Future<void> updateTaskToBackEnd(String id, String title, String description, String status) async {

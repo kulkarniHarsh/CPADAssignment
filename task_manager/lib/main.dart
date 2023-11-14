@@ -208,7 +208,7 @@ class _HomeState extends State<MyApp> with SingleTickerProviderStateMixin {
                                     await deleteTask(varTask.objectId!);
                                     setState(() {
                                       final snackBar = SnackBar(
-                                        content: Text("Todo deleted!"),
+                                        content: Text("Todo #"+varId+" deleted!"),
                                         duration: Duration(seconds: 2),
                                       );
                                       ScaffoldMessenger.of(context)
