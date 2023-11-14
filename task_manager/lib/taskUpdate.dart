@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 
-import 'main.dart';
+import 'main.dart' show Task;
 
 class MyTaskUpdate extends StatefulWidget {
   final Task task;
